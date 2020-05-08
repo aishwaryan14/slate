@@ -1,11 +1,6 @@
 ---
 title: API Reference
 
-language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -17,52 +12,52 @@ includes:
 search: true
 ---
 
-# Introduction
+# /<--path1-->
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
-
-# Authentication
-
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
+> POST request
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+curl "http://<--hostname-->.com/api/v1/<--path1-->"
+  -H "Authorization: Bearer `token`"
 ```
 
-```javascript
-const kittn = require('kittn');
+> Make sure to replace `token` with your API key.
 
-let api = kittn.authorize('meowmeowmeow');
+> Payload
+
+```json
+{
+  { "id": 1,
+    ...
+  },
+  { "id":2,
+    ...
+  }
+}
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Use API keys to allow access to the API. You can register a new user at (http://<--hostname-->/register).
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+The API key must be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: meowmeowmeow`
+`Authorization: Bearer `token` `
+
+### HTTP Request
+
+`GET http://example.com/api/v1/<--path1-->`
+
+### Query Parameters
+
+| Name | Located in | Description | Required | Type |
+| ---- | ---------- | ----------- | -------- | ---- |
+| payload | body |  | Yes | json |
+| Authorization | header | A Bearer authorization token | Yes | string |
+
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>token</code> with your personal API key.
 </aside>
 
 # Kittens
